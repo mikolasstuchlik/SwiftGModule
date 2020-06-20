@@ -1,4 +1,0 @@
-import CGLib
-import GLib
-
-public struct GModule {}
