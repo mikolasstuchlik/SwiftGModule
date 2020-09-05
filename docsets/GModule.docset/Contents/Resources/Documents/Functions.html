@@ -21,9 +21,9 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          GModule 2.64.3 Docs
+          GModule 2.64.4 Docs
         </a>
-         (86% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -65,10 +65,18 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/GModule.html">GModule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VG_AHtF">moduleBuildPath(directory:moduleName:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VGSg_AItF">moduleBuildPath(directory:moduleName:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:7GModule11moduleErrorSSSgyF">moduleError()</a>
@@ -89,9 +97,6 @@
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/GModule.html">GModule</a>
-              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/ModuleFlags.html">ModuleFlags</a>
               </li>
@@ -136,9 +141,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VG_AHtF"></a>
+                    <a name="/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VGSg_AItF"></a>
                     <a name="//apple_ref/swift/Function/moduleBuildPath(directory:moduleName:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VG_AHtF">moduleBuildPath(directory:moduleName:)</a>
+                    <a class="token" href="#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VGSg_AItF">moduleBuildPath(directory:moduleName:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -165,12 +170,13 @@ directory it will return <code>\Windows\mylibrary.dll</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleBuildPath</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">moduleName</span> <span class="nv">module_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleBuildPath</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">moduleName</span> <span class="nv">module_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L177-L180">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L95-L98">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -195,12 +201,13 @@ directory it will return <code>\Windows\mylibrary.dll</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleError</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleError</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L186-L189">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L104-L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -225,12 +232,13 @@ directory it will return <code>\Windows\mylibrary.dll</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleSupported</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">moduleSupported</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L195-L198">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGModule/tree/generated/Sources/GModule/GModule-2.0.swift#L113-L116">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -243,7 +251,7 @@ directory it will return <code>\Windows\mylibrary.dll</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-06-21)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-05)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

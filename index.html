@@ -20,9 +20,9 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          GModule 2.64.3 Docs
+          GModule 2.64.4 Docs
         </a>
-         (86% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -64,10 +64,18 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/GModule.html">GModule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VG_AHtF">moduleBuildPath(directory:moduleName:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:7GModule15moduleBuildPath9directory0B4NameSSSgSPys4Int8VGSg_AItF">moduleBuildPath(directory:moduleName:)</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:7GModule11moduleErrorSSSgyF">moduleError()</a>
@@ -88,9 +96,6 @@
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/GModule.html">GModule</a>
-              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/ModuleFlags.html">ModuleFlags</a>
               </li>
@@ -127,10 +132,29 @@
 
 <p>A Swift wrapper around gmodule-2.x that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see <a href="https://rhx.github.io/SwiftGModule/">https://rhx.github.io/SwiftGModule/</a></p>
+<h2 id='what-is-new' class='heading'>What is new?</h2>
+
+<p>Version 11 introduces a new type system into <code>gir2swift</code>,
+to ensure it has a representation of the underlying types.
+This is necessary for Swift 5.3 onwards, which requires more stringent casts.
+As a consequence, accessors can accept and return idiomatic Swift rather than
+underlying types or pointers.
+This means that a lot of the changes will be source-breaking for code that
+was compiled against libraries built with earlier versions of <code>gir2swift</code>.</p>
+<h3 id='notable-changes' class='heading'>Notable changes</h3>
+<div class="aside aside-requires">
+    <p class="aside-title">Requires</p>
+    Requires Swift 5.2 or later
+
+</div><ul>
+<li>Wrapper code is now <code>@inlinable</code> to enable the compiler to optimise away most of the wrappers</li>
+<li>Functions that take or return records now are templated instead of using the type-erased Protocol</li>
+<li><code>ErrorType</code> has been renamed <code>GLibError</code> to ensure it neither clashes with <code>Swift.Error</code> nor the <code>GLib.ErrorType</code>  scanner enum</li>
+</ul>
 <h2 id='prerequisites' class='heading'>Prerequisites</h2>
 <h3 id='swift' class='heading'>Swift</h3>
 
-<p>To build, you need at least Swift 4.2 (Swift 5 should work fine), download from <a href="https://swift.org/download/">https://swift.org/download/</a> &ndash; if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using <code>swift --version</code>, which should give you something like</p>
+<p>To build, you need at least Swift 5.2 (Swift 5.3+ should work fine), download from <a href="https://swift.org/download/">https://swift.org/download/</a> &ndash; if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using <code>swift --version</code>, which should give you something like</p>
 <pre class="highlight plaintext"><code>$ swift --version
 Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 Target: x86_64-apple-darwin19.6.0
@@ -138,12 +162,12 @@ Target: x86_64-apple-darwin19.6.0
 
 <p>on macOS, or on Linux you should get something like:</p>
 <pre class="highlight plaintext"><code>$ swift --version
-Swift version 5.2.4 (swift-5.2.4-RELEASE)
+Swift version 5.2.5 (swift-5.2.5-RELEASE)
 Target: x86_64-unknown-linux-gnu
 </code></pre>
-<h3 id='glib-2-46-or-higher' class='heading'>GLib 2.46 or higher</h3>
+<h3 id='glib-2-56-or-higher' class='heading'>GLib 2.56 or higher</h3>
 
-<p>These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have <code>gobject-introspection</code> and its <code>.gir</code> files installed.</p>
+<p>These Swift wrappers have been tested with glib-2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have <code>gobject-introspection</code> and its <code>.gir</code> files installed.</p>
 <h4 id='linux' class='heading'>Linux</h4>
 <h5 id='ubuntu' class='heading'>Ubuntu</h5>
 
@@ -216,7 +240,7 @@ xcode-select --install
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-06-21)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-05)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
