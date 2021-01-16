@@ -3,6 +3,7 @@
 /.docs.old
 /Packages
 /*.xcodeproj
+/.swiftpm
 *.tgz
 Package.resolved
 Package.pins
